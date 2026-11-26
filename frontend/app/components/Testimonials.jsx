@@ -19,47 +19,49 @@ const inter = Inter({
 const TESTIMONIALS = [
   {
     quote:
-      "Managing my property from London used to be a nightmare. Dubai Homes completely changed that. Their monthly reports and proactive maintenance mean I haven't had to worry about a thing in over two years.",
-    author: "James Whitfield",
-    role: "Property Owner, London",
-    initials: "JW",
-  },
-  {
-    quote:
-      "The level of transparency is unmatched. From the initial snagging inspection to tenant screening, every step was documented. It's rare to find a property manager that treats your asset like their own.",
-    author: "Sarah Al Maktoum",
-    role: "Investor, Dubai",
-    initials: "SA",
-  },
-  {
-    quote:
-      "As an overseas investor, I needed someone reliable. Their team handled the entire Ejari registration, upgraded the AC system, and secured a long-term tenant within weeks. Highly recommended.",
+      "Managing a property remotely can be challenging, but this team has made the entire process effortless. From regular property updates to handling maintenance requests, everything is managed with great attention to detail. Their reliable service gives me complete peace of mind.",
     author: "Michael Chen",
-    role: "Portfolio Investor, Singapore",
+    role: "Commercial Landlord, DIFC",
     initials: "MC",
   },
   {
     quote:
-      "The communication is flawless. Whenever there is an issue with the villa, I get a WhatsApp message with a quote and photos before any work is done. It takes all the stress out of ownership.",
-    author: "Emma Thompson",
-    role: "Villa Owner, Dubai Hills",
-    initials: "ET",
+      "What impressed me most was their organized approach and attention to every detail. I was kept informed throughout the entire process, from property inspections to tenant selection. Their professionalism has made managing my Dubai investment much easier.",
+    author: "James Anderson",
+    role: "Real Estate Investor, Downtown Dubai",
+    initials: "JA",
   },
   {
     quote:
-      "I've worked with three property managers in Dubai over the last decade. None of them come close to the level of professionalism and market knowledge that this team possesses. They truly maximize ROI.",
-    author: "Omar Al Fayed",
-    role: "Commercial Landlord, DIFC",
-    initials: "OA",
+      "Living outside the UAE, I wanted a team that could manage my property without constant supervision. They took care of the documentation, property improvements, and tenant placement efficiently. The entire experience has been smooth and professionally handled.",
+    author: "Sarah Williams",
+    role: "Overseas Property Owner, Dubai Marina",
+    initials: "SW",
   },
   {
     quote:
-      "Finding a tenant was fast, but keeping them happy has been the real win. The 24/7 maintenance team means small issues get resolved before they become big problems. Absolutely seamless service.",
-    author: "Chloe Dubois",
-    role: "Apartment Owner, Paris",
-    initials: "CD",
+      "I appreciate how quickly their team responds to every request. Whether it's routine maintenance or an unexpected repair, I always receive clear updates and practical solutions. Their honest communication and dependable service make a real difference.",
+    author: "David Thompson",
+    role: "Villa Owner, Arabian Ranches",
+    initials: "DT",
+  },
+  {
+    quote:
+      "Choosing the right property management company has made a significant difference to my investment experience. Their understanding of Dubai's rental market, professional tenant management, and consistent property care really stand out. I am extremely satisfied with their service.",
+    author: "Robert Mitchell",
+    role: "Property Investor, Business Bay",
+    initials: "RM",
+  },
+  {
+    quote:
+      "From marketing the property to managing tenant requirements, everything has been handled professionally. Their maintenance coordination and regular communication ensure my property stays in excellent condition. I would certainly recommend their services to property owners in Dubai.",
+    author: "Emily Carter",
+    role: "Residential Landlord, Palm Jumeirah",
+    initials: "EC",
   },
 ];
+
+
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -116,14 +118,14 @@ export default function Testimonials() {
         </div>
 
         {/* Auto-scroll Progress Bar */}
-        <div className="w-full max-w-[200px] mx-auto h-[2px] bg-[#e5e7eb] mb-2 rounded-full overflow-hidden">
+        {/* <div className="w-full max-w-[200px] mx-auto h-[2px] bg-[#e5e7eb] mb-2 rounded-full overflow-hidden">
           <div
             className="h-full bg-[#96683f] transition-all duration-300 ease-linear"
             style={{
               width: `${((activeIndex + 1) / TESTIMONIALS.length) * 100}%`,
             }}
           />
-        </div>
+        </div> */}
 
         {/* Carousel Container */}
         <div className="relative h-[400px] md:h-[360px] w-full max-w-4xl mx-auto flex items-center justify-center">

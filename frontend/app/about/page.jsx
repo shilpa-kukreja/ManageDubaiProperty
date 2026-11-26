@@ -4,7 +4,8 @@ import AboutBanner from "./components/AboutBanner";
 import WhoWeAre from "./components/WhoWeAre";
 import CoreValues from "./components/CoreValues";
 import OurStory from "./components/OurStory";
-import CTA from "../components/CTA"
+import CTA from "./components/CTA"
+import WhyChooseUs from "./components/WhyChooseUs"
 
 export const metadata = {
   title: "About Us — Dubai Homes",
@@ -19,6 +20,7 @@ export default function AboutPage() {
         <AboutBanner />
         <OurStory />
         <CoreValues />
+        <WhyChooseUs/>
       </main>
       <CTA/>
       <Footer />

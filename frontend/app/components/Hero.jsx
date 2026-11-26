@@ -53,8 +53,8 @@ const CONTACT_LINKS = [
     ),
   },
   {
-    label: "info@binayah.com",
-    href: "mailto:info@binayah.com",
+    label: "managedubaiproperty@gmail.com",
+    href: "mailto:managedubaiproperty@gmail.com",
     icon: (
       <svg
         width="16"
@@ -85,7 +85,9 @@ export default function Hero() {
 
   return (
     /* Apply the font variables to the main wrapper */
-    <section className={`${inter.variable} ${playfair.variable} relative min-h-screen flex items-center justify-center overflow-hidden bg-[#111827]`}>
+    <section
+      className={`${inter.variable} ${playfair.variable} relative min-h-screen flex items-center justify-center overflow-hidden bg-[#111827]`}
+    >
       {/* ================= CAROUSEL BACKGROUND ================= */}
       <div className="absolute inset-0 w-full h-full">
         {HERO_IMAGES.map((src, index) => (
@@ -114,68 +116,52 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-32">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
           {/* Left Side: Heading + Subtext */}
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
+
+             <div className="flex items-center gap-3 mb-6">
+          <span className="w-8 h-[1px] bg-[#96683f]" />
+          <span className={`${inter.className} text-[#96683f] text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em]`}>
+            Property Management &middot; Dubai
+          </span>
+        </div>
             {/* Main Heading using Playfair Display */}
-            <h1
-              className="font-[family-name:var(--font-playfair)] font-medium text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] tracking-tight mb-6"
-            >
-              Elegant and comfortable living in a modern space
+            <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[4rem] font-medium text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+              No Matter Where You Are,{" "}
+              <span className="italic text-[#96683f]">
+                Your Property Is In Safe Hands
+              </span>
             </h1>
+
+            {/* Subtext */}
             <p
-              className={`${inter.className} text-white/70 text-[16px] md:text-[17px] leading-[1.7] max-w-xl mb-8`}
+              className={`${inter.className} text-white/70 text-[15px] md:text-lg leading-relaxed max-w-2xl mb-10`}
             >
-              Premium property management across Dubai's most sought-after
-              communities. From tenant sourcing to 24/7 maintenance, we handle
-              every detail so you can enjoy seamless ownership.
+              Let the professionals manage it. We handle tenants, rent
+              collection, snagging, maintenance and reporting so your Dubai
+              property stays occupied, compliant and profitable, whether you
+              live here or overseas.
             </p>
 
-            {/* Contact quick links */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-              {CONTACT_LINKS.map((c) => (
+            {/* Contact Buttons Row */}
+            <div className="flex flex-wrap items-center gap-4 mb-16">
+              {CONTACT_LINKS.map((contact) => (
                 <a
-                  key={c.href}
-                  href={c.href}
-                  target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    c.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className={`${inter.className} group inline-flex items-center gap-2 text-white/85 hover:text-[#e1c8b4] text-[14px] font-medium transition-colors duration-300`}
+                  key={contact.label}
+                  href={contact.href}
+                  className={`${inter.className} group inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-[13px] md:text-[14px] font-semibold transition-all duration-300 ${
+                    contact.primary
+                      ? "bg-[#96683f] text-white hover:bg-[#855b36] shadow-lg"
+                      : "bg-white/10 border border-white/20 text-white backdrop-blur-md hover:bg-white/20 hover:border-white/40"
+                  }`}
                 >
-                  <span className="text-[#e1c8b4] group-hover:text-white transition-colors duration-300">
-                    {c.icon}
+                  <span
+                    className={`${contact.primary ? "text-white" : "text-[#96683f]"}`}
+                  >
+                    {contact.icon}
                   </span>
-                  {c.label}
+                  {contact.label}
                 </a>
               ))}
-            </div>
-          </div>
-
-          {/* Right Side: Address & Buttons */}
-          <div className="flex flex-col items-start lg:items-end shrink-0 pb-2">
-            <p
-              className={`${inter.className} text-[14px] text-white/75 mb-6 tracking-wide`}
-            >
-              320 40th Street B4, Dubai, UAE 10019
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3">
-              {/* Button 1: Schedule a Visit */}
-              <Link
-                href="/contact"
-                className={`${inter.className} inline-flex items-center justify-center h-[46px] px-6 rounded-lg bg-[#b07e50] text-white text-[14px] font-semibold hover:bg-[#96683f] transition-colors duration-300`}
-              >
-                Schedule a Visit
-              </Link>
-
-              {/* Button 2: Explore Property */}
-              <Link
-                href="/properties"
-                className={`${inter.className} inline-flex items-center justify-center h-[46px] px-6 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white text-[14px] font-semibold hover:bg-white hover:text-[#111827] hover:border-white transition-colors duration-300`}
-              >
-                Explore Property
-              </Link>
             </div>
           </div>
         </div>
@@ -186,9 +172,7 @@ export default function Hero() {
         {/* Location */}
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
+          <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
             Managing Dubai property
           </span>
           <div
@@ -201,9 +185,7 @@ export default function Hero() {
         {/* Property Type */}
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
+          <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
             Fully compliant
           </span>
           <div
@@ -231,9 +213,7 @@ export default function Hero() {
         {/* Service */}
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
+          <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
             Licensed maintenance
           </span>
           <div
@@ -246,9 +226,7 @@ export default function Hero() {
         {/* Budget */}
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
+          <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
             119 Google reviews
           </span>
           <div
@@ -260,11 +238,12 @@ export default function Hero() {
 
         {/* Action Button */}
         <div className="w-[200px]">
-          <button
+          <Link 
+           href="/contact"
             className={`${inter.className} w-full h-full bg-[#b07e50] text-white text-[13px] font-semibold hover:bg-[#96683f] transition-colors duration-300`}
           >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </section>

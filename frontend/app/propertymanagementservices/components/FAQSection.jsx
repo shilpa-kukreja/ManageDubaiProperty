@@ -18,45 +18,46 @@ const inter = Inter({
 
 const FAQS = [
   {
-    question: "Why shouldn’t I manage my property myself?",
+    question: "Why Should I Choose Professional Property Management Instead of Managing My Property Myself?",
     answer:
-      "Running a property well is a full-time job: advertising, finding suitable tenants, administration, collecting payments, leasing inspections, maintenance and repairs. Our team takes care of every part of it so ownership stays profitable without the strain.",
+      "Managing a rental property involves more than simply finding tenants. It requires consistent attention to marketing, tenant selection, rental payments, legal documentation, property inspections and ongoing maintenance. A professional property management team handles these responsibilities efficiently, allowing you to enjoy the benefits of property ownership without dealing with everyday management challenges.",
+  },
+   {
+    question: "Can a Property Management Company Collect Rent and Issue Tenancy Notices on My Behalf?",
+    answer:
+      "Yes. An authorised property management company can collect rental payments, coordinate tenancy-related communications, arrange property maintenance and manage other rental responsibilities on behalf of the landlord. Any formal notices or legal actions must comply with applicable Dubai tenancy laws and the terms of the owner's authorisation.",
   },
   {
-    question: "What can I do to get my home rented faster?",
+    question: "How Can I Find Tenants for My Property More Quickly?",
     answer:
-      "Choose a management service with a proven client base, strong agents across different areas and real credibility in the market. That combination is what gets a unit let quickly and keeps occupancy high.",
+      "Finding the right tenant requires effective marketing, strong industry connections and an in-depth understanding of the local rental market. Working with an experienced property management company gives your property access to a wider audience, professional agents and established tenant networks, helping attract potential renters and reduce vacancy periods.",
   },
   {
-    question: "How long will it take to rent my home?",
+    question: "How Much Time Does It Usually Take to Rent Out a Property?",
     answer:
-      "Your property needs proper market exposure to minimise vacancy. We list across the major portals including Property Finder, Bayut and Dubizzle, and work with trusted partners to reach a wide pool of tenants.",
+      "The rental timeline depends on several factors, including location, property condition, pricing and current market demand. To improve your chances of securing a tenant quickly, we promote properties through leading real estate platforms such as Property Finder, Bayut and Dubizzle, alongside our professional network of rental partners.",
   },
   {
-    question: "How much will my home rent for?",
+    question: "How Can I Determine the Right Rental Price for My Property?",
     answer:
-      "Alongside professional marketing we give you a realistic market price so you get the maximum possible return. We analyse the market constantly to keep your property performing at its full potential.",
+      "Setting the right rental value starts with understanding current market conditions. We evaluate similar properties, neighbourhood demand, location advantages and recent rental trends to recommend a competitive asking price. Our approach helps property owners attract genuine tenants while achieving a strong rental return.",
   },
   {
-    question: "How are property management companies regulated in Dubai?",
+    question: "Who Regulates Property Management Businesses in Dubai?",
     answer:
-      "They are regulated by RERA, the UAE’s real estate regulatory body. A company must act in its clients’ best interests, stay transparent in all dealings, be honest in its recommendations and treat every party fairly.",
+      "Property management activities in Dubai fall under the regulatory framework of the Real Estate Regulatory Agency (RERA), which operates under the Dubai Land Department (DLD). Property management companies are expected to follow applicable regulations, maintain transparent business practices, protect their clients' interests and conduct transactions professionally.",
   },
   {
-    question: "What are the core duties of a property manager?",
+    question: "What Services Are Included in Professional Property Management?",
     answer:
-      "Protecting and maintaining the value of your investment while giving you hassle-free ownership. That covers marketing, tenant screening, rent collection, maintenance and financial reporting.",
+      "Property management involves looking after your real estate investment while ensuring a smooth rental experience. Typical responsibilities include property advertising, tenant verification, lease administration, rent collection, routine inspections, maintenance coordination, repair management and regular financial updates for property owners.",
   },
   {
-    question: "What are the procedures to get started?",
+    question: "What Is the Process of Hiring a Property Management Company?",
     answer:
-      "Submit a contact request so we can connect, email us the necessary documents, then sign our tailored management agreement and settle the fee. After that your passive income runs stress-free.",
+      "Getting started is straightforward. First, contact our team and share the basic details of your property. We will guide you through the required paperwork and documentation. Once everything has been reviewed, you can proceed with signing a property management agreement and completing the applicable service fee. Our team will then take care of the agreed management responsibilities.",
   },
-  {
-    question: "Can a management company collect rent and serve notice?",
-    answer:
-      "Yes. Where the landlord has appointed the company to manage the property, it can collect rent, serve notice, maintain the property and handle issues with the tenancy on the owner’s behalf.",
-  },
+ 
 ];
 
 export default function FAQSection() {

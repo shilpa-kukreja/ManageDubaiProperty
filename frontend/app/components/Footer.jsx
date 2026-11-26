@@ -231,10 +231,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:hello@dubaihomes.com"
+                    href="mailto:managedubaiproperty@gmail.com"
                     className="hover:text-[#96683f] transition-colors"
                   >
-                    managedubaiproperty@gmail.co
+                    managedubaiproperty@gmail.com
                   </a>
                 </li>
               </ul>

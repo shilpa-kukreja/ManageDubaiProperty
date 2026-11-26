@@ -17,35 +17,46 @@ const inter = Inter({
 
 const FAQS = [
   {
-    question: "What is included in your full property management service?",
+    question: "Why Should I Choose Professional Property Management Instead of Managing My Property Myself?",
     answer:
-      "Our full management service covers everything from tenant sourcing and rigorous background checks to rent collection, 24/7 maintenance coordination, Ejari registration, and regular property inspections. We act as your single point of contact, handling all the day-to-day operations so you don't have to.",
+      "Managing a rental property involves more than simply finding tenants. It requires consistent attention to marketing, tenant selection, rental payments, legal documentation, property inspections and ongoing maintenance. A professional property management team handles these responsibilities efficiently, allowing you to enjoy the benefits of property ownership without dealing with everyday management challenges.",
+  },
+   {
+    question: "Can a Property Management Company Collect Rent and Issue Tenancy Notices on My Behalf?",
+    answer:
+      "Yes. An authorised property management company can collect rental payments, coordinate tenancy-related communications, arrange property maintenance and manage other rental responsibilities on behalf of the landlord. Any formal notices or legal actions must comply with applicable Dubai tenancy laws and the terms of the owner's authorisation.",
   },
   {
-    question: "I live overseas. Can I still manage my Dubai property through you?",
+    question: "How Can I Find Tenants for My Property More Quickly?",
     answer:
-      "Absolutely. A large portion of our clients are overseas investors. We provide monthly photo and financial reports, use secure digital payment gateways for rent transfers, and handle all physical aspects of the property. You can manage everything from your phone, no matter your timezone.",
+      "Finding the right tenant requires effective marketing, strong industry connections and an in-depth understanding of the local rental market. Working with an experienced property management company gives your property access to a wider audience, professional agents and established tenant networks, helping attract potential renters and reduce vacancy periods.",
   },
   {
-    question: "How do you screen potential tenants?",
+    question: "How Much Time Does It Usually Take to Rent Out a Property?",
     answer:
-      "We employ a strict vetting process which includes verifying employment status, checking previous landlord references, reviewing credit history where applicable, and ensuring all identification and visa documents are valid and authentic before signing any lease.",
+      "The rental timeline depends on several factors, including location, property condition, pricing and current market demand. To improve your chances of securing a tenant quickly, we promote properties through leading real estate platforms such as Property Finder, Bayut and Dubizzle, alongside our professional network of rental partners.",
   },
   {
-    question: "What are your management fees?",
+    question: "How Can I Determine the Right Rental Price for My Property?",
     answer:
-      "Our fees are highly competitive and transparent. We typically charge a percentage of the annual rent, which covers all standard management duties. There are no hidden costs; any maintenance or specialized services are quoted and approved by you beforehand.",
+      "Setting the right rental value starts with understanding current market conditions. We evaluate similar properties, neighbourhood demand, location advantages and recent rental trends to recommend a competitive asking price. Our approach helps property owners attract genuine tenants while achieving a strong rental return.",
   },
   {
-    question: "How do you handle property maintenance and repairs?",
+    question: "Who Regulates Property Management Businesses in Dubai?",
     answer:
-      "We have a network of licensed, trusted contractors. For minor repairs, we handle them immediately to prevent further damage. For major repairs or replacements, we provide you with a detailed quote and photo evidence for your approval before any work begins.",
+      "Property management activities in Dubai fall under the regulatory framework of the Real Estate Regulatory Agency (RERA), which operates under the Dubai Land Department (DLD). Property management companies are expected to follow applicable regulations, maintain transparent business practices, protect their clients' interests and conduct transactions professionally.",
   },
   {
-    question: "What happens if a tenant stops paying rent?",
+    question: "What Services Are Included in Professional Property Management?",
     answer:
-      "We follow a strict follow-up procedure. If a cheque bounces, we immediately notify you and initiate the legal process through the Rental Dispute Center (RDC) if necessary. We handle all communications and legal paperwork to protect your investment.",
+      "Property management involves looking after your real estate investment while ensuring a smooth rental experience. Typical responsibilities include property advertising, tenant verification, lease administration, rent collection, routine inspections, maintenance coordination, repair management and regular financial updates for property owners.",
   },
+  {
+    question: "What Is the Process of Hiring a Property Management Company?",
+    answer:
+      "Getting started is straightforward. First, contact our team and share the basic details of your property. We will guide you through the required paperwork and documentation. Once everything has been reviewed, you can proceed with signing a property management agreement and completing the applicable service fee. Our team will then take care of the agreed management responsibilities.",
+  },
+ 
 ];
 
 export default function FAQSection() {
