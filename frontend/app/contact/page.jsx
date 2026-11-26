@@ -110,7 +110,7 @@ export default function ContactPage() {
               <div className="lg:w-[60%]">
                 <div className="h-full bg-white rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_-20px_rgba(150,104,63,0.1)] border border-[#f0e7dc] relative overflow-hidden">
                   {/* Subtle Top Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#96683f] to-transparent opacity-80" />
+                  {/* <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#96683f] to-transparent opacity-80" /> */}
 
                   {/* 3. Applied Playfair to Form Title */}
                   <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#111827] tracking-tight mb-8">
@@ -206,7 +206,7 @@ export default function ContactPage() {
               <div className="lg:w-[40%]">
                 <div className="h-full bg-white rounded-2xl p-8 md:p-10 shadow-[0_20px_50px_-20px_rgba(150,104,63,0.1)] border border-[#f0e7dc] relative overflow-hidden flex flex-col justify-between">
                   {/* Subtle Top Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#96683f] to-transparent opacity-80" />
+                  {/* <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#96683f] to-transparent opacity-80" /> */}
 
                   <div>
                     {/* 4. Applied Playfair to Contact Info Title */}
