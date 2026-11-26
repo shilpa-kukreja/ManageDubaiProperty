@@ -3,7 +3,7 @@
 import { Playfair_Display, Inter } from "next/font/google";
 import { useState } from "react";
 
-// 1. Initialize Fonts
+// Initialize Fonts
 const playfair = Playfair_Display({ 
   subsets: ["latin"], 
   weight: ["400", "500", "600", "700"],
@@ -66,87 +66,105 @@ export default function ConsultationSection() {
     }
   };
 
+  const badges = [
+    "RERA-certified agency",
+    "Overseas owners welcome",
+    "Transparent reporting"
+  ];
+
   return (
-    /* Applied font variables to the section */
-    <section id="consulation" className={`${playfair.variable} ${inter.variable} py-20 bg-[#fcf9f6] overflow-hidden relative border-t border-[#f3f4f6]`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+    <section id="consultation" className={`${playfair.variable} ${inter.variable} py-8 md:py-12 bg-[#fcfbf9] overflow-hidden relative border-t border-[#f3f4f6]`}>
+      
+      {/* Subtle Background Decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#96683f]/[0.02] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           
-          {/* LEFT SIDE: Trust & Value Proposition */}
+          {/* LEFT SIDE: Editorial Content */}
           <div className="flex-1 w-full">
-            <div className="inline-flex mb-6">
-              <span className={`${inter.className} bg-[#ffffff] border border-[#e5e7eb] text-[#96683f] px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider`}>
-                Free Consultation
+            
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-[1px] bg-[#96683f]" />
+              <span className={`${inter.className} text-[#96683f] text-[11px] md:text-[12px] font-bold uppercase tracking-[0.2em]`}>
+                Overview
               </span>
             </div>
-            
-            {/* 2. Applied Playfair to Main Heading */}
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-[2.75rem] font-medium text-[#111827] leading-[1.15] tracking-tight mb-5">
-              Hands-On Property Management   <br /> for <span className="italic text-[#96683f]">Dubai Landlords</span>
+
+            {/* Main Heading */}
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-medium text-[#111827] leading-[1.15] tracking-tight mb-6">
+              Property Management <span className="italic text-[#96683f]">In Dubai</span>
             </h2>
-            
-            <p className={`${inter.className} text-[#4b5563] text-[15px] leading-relaxed mb-10 max-w-md`}>
-Looking after a rental in Dubai is about far more than receiving a monthly payment. It calls for a clear plan, steady oversight and a team that stays accountable. Binayah protects the condition of your asset, works to lift its rental income and keeps it in excellent shape through every season.            </p>
 
-            {/* Trust Points */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#ffffff] border border-[#e5e7eb] flex items-center justify-center text-[#96683f]">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <path d="M9 12l2 2 4-4" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[16px] mb-1">RERA Certified & Fully Compliant</h4>
-                  <p className={`${inter.className} text-[#6b7280] text-[13px] leading-relaxed`}>Legally sound management with zero hidden fees.</p>
-                </div>
-              </div>
+            {/* Paragraphs */}
+            <div className={`${inter.className} text-[#4b5563] text-[15px] leading-relaxed space-y-5 mb-10 max-w-xl`}>
+              <p>
+                Managing property in Dubai takes more than collecting rent. It demands strategy, attention and commitment, which is why investors choose us. We go beyond routine management by protecting your asset, improving rental value and keeping the property in top condition all year round.
+              </p>
+              <p>
+                Our approach combines proven systems, experienced managers and real market insight, so landlords see consistent growth. Whether you own a single rental unit or a full portfolio, your property is treated as a long-term asset rather than just another unit on a list.
+              </p>
+              <p>
+                The result is a secure, income-generating asset that runs quietly in the background while you focus on everything else.
+              </p>
+            </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#ffffff] border border-[#e5e7eb] flex items-center justify-center text-[#96683f]">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                    <circle cx="12" cy="12" r="3" />
+            {/* Checklist Badges */}
+            <div className="flex flex-wrap gap-3">
+              {badges.map((badge, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-2 bg-white border border-[#e5e7eb] rounded-full px-4 py-2 shadow-sm"
+                >
+                  <svg 
+                    className="w-3.5 h-3.5 text-[#96683f]" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2.5" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
                   </svg>
+                  <span className={`${inter.className} text-[#374151] text-[12px] md:text-[13px] font-medium`}>
+                    {badge}
+                  </span>
                 </div>
-                <div>
-                  <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[16px] mb-1">Absolute Transparency</h4>
-                  <p className={`${inter.className} text-[#6b7280] text-[13px] leading-relaxed`}>Monthly photo reports, invoices, and 24/7 portal access.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#ffffff] border border-[#e5e7eb] flex items-center justify-center text-[#96683f]">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[16px] mb-1">Dedicated Account Manager</h4>
-                  <p className={`${inter.className} text-[#6b7280] text-[13px] leading-relaxed`}>One point of contact who knows your property inside out.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* RIGHT SIDE: Premium Form */}
           <div className="flex-1 w-full max-w-lg mx-auto lg:mx-0">
-            <div className="bg-[#ffffff] rounded-2xl p-8 border border-[#e5e7eb] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+            
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e5e7eb] shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)] overflow-hidden">
               
-              {/* 3. Applied Playfair to Form Title */}
-              <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#111827] mb-6">
-                Request a Call Back
-              </h3>
+              {/* Top Bronze Accent Line */}
+              <div className="h-1 w-full bg-[#96683f]" />
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                
-                {/* User Type Radio Buttons */}
-                <div className="mb-4">
-                  <label className={`${inter.className} block text-[12px] font-medium text-[#374151] mb-2`}>I am a...</label>
-                  <div className="flex gap-6">
-                    <label className="flex items-center gap-2 cursor-pointer">
+              <div className="p-8 md:p-10">
+                {/* Form Eyebrow */}
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-6 h-[1px] bg-[#96683f]" />
+                  <span className={`${inter.className} text-[#96683f] text-[10px] font-bold uppercase tracking-[0.15em]`}>
+                    Free Consultation
+                  </span>
+                </div>
+
+                <h3 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-semibold text-[#111827] mb-2">
+                  Request A Call Back
+                </h3>
+                <p className={`${inter.className} text-[#6b7280] text-[13px] mb-6`}>
+                  Tell us about your property and a manager will call you back, usually within the hour.
+                </p>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  
+                  {/* User Type Radio Buttons */}
+                  <div className="bg-[#fcfbf9] rounded-md p-2 flex gap-4 mb-2 border border-[#f3f4f6]">
+                    <label className="flex items-center gap-2 cursor-pointer flex-1 pl-2">
                       <input 
                         type="radio" 
                         name="userType" 
@@ -155,9 +173,9 @@ Looking after a rental in Dubai is about far more than receiving a monthly payme
                         onChange={handleChange}
                         className="w-4 h-4 text-[#96683f] border-[#d1d5db] focus:ring-[#96683f]"
                       />
-                      <span className={`${inter.className} text-sm text-[#374151]`}>Property Owner</span>
+                      <span className={`${inter.className} text-[13px] text-[#111827] font-medium`}>I'm a property owner</span>
                     </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
+                    <label className="flex items-center gap-2 cursor-pointer flex-1">
                       <input 
                         type="radio" 
                         name="userType" 
@@ -166,102 +184,107 @@ Looking after a rental in Dubai is about far more than receiving a monthly payme
                         onChange={handleChange}
                         className="w-4 h-4 text-[#96683f] border-[#d1d5db] focus:ring-[#96683f]"
                       />
-                      <span className={`${inter.className} text-sm text-[#374151]`}>Tenant</span>
+                      <span className={`${inter.className} text-[13px] text-[#4b5563]`}>I'm a tenant</span>
                     </label>
                   </div>
-                </div>
 
-                {/* Name */}
-                <div>
-                  <label className={`${inter.className} block text-[12px] font-medium text-[#374151] mb-1.5`}>Full Name</label>
-                  <input 
-                    type="text" 
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="John Doe" 
-                    className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
-                  />
-                </div>
-
-                {/* Email & Phone Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Name */}
                   <div>
-                    <label className={`${inter.className} block text-[12px] font-medium text-[#374151] mb-1.5`}>Email</label>
+                    <label className={`${inter.className} block text-[11px] font-bold text-[#6b7280] uppercase tracking-wider mb-1.5`}>Full Name</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name" 
+                      className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className={`${inter.className} block text-[11px] font-bold text-[#6b7280] uppercase tracking-wider mb-1.5`}>Email</label>
                     <input 
                       type="email" 
                       name="email"
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com" 
+                      placeholder="you@email.com" 
                       className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
                     />
                   </div>
-                  <div>
-                    <label className={`${inter.className} block text-[12px] font-medium text-[#374151] mb-1.5`}>Phone</label>
-                    <input 
-                      type="tel" 
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+971 50 123 4567" 
-                      className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
-                    />
-                  </div>
-                </div>
 
-                {/* Property Type */}
-                <div>
-                  <label className={`${inter.className} block text-[12px] font-medium text-[#374151] mb-1.5`}>Property Type</label>
-                  <div className="relative">
-                    <select 
-                      name="propertyType"
-                      value={formData.propertyType}
-                      onChange={handleChange}
-                      className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] appearance-none focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all cursor-pointer`}
-                    >
-                      <option value="Apartment">Apartment</option>
-                      <option value="Villa">Villa</option>
-                      <option value="Townhouse">Townhouse</option>
-                      <option value="Commercial">Commercial / Retail</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-[#6b7280]">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
+                  {/* Phone with Country Code */}
+                  <div>
+                    <label className={`${inter.className} block text-[11px] font-bold text-[#6b7280] uppercase tracking-wider mb-1.5`}>Phone</label>
+                    <div className="flex w-full">
+                      <div className="flex items-center justify-center bg-gray-50 border border-r-0 border-[#d1d5db] rounded-l-md px-3 text-sm text-[#4b5563]">
+                        🇦🇪 +971
+                      </div>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="50 123 4567" 
+                        className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-r-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
+                      />
                     </div>
                   </div>
-                </div>
 
-                {/* Message */}
-                <div>
-                  <label className={`${inter.className} block text-[12px] font-medium text-[#374151] mb-1.5`}>Message</label>
-                  <textarea 
-                    name="message"
-                    rows="3"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us briefly about your property..." 
-                    className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all resize-none`}
-                  />
-                </div>
+                  {/* Property Type */}
+                  <div>
+                    <label className={`${inter.className} block text-[11px] font-bold text-[#6b7280] uppercase tracking-wider mb-1.5`}>Property Type</label>
+                    <div className="relative">
+                      <select 
+                        name="propertyType"
+                        value={formData.propertyType}
+                        onChange={handleChange}
+                        className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] appearance-none focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all cursor-pointer`}
+                      >
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Townhouse">Townhouse</option>
+                        <option value="Commercial">Commercial / Retail</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-[#6b7280]">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Submit Button */}
-                <button 
-                  type="submit"
-                  disabled={status === "loading"}
-                  className={`w-full flex items-center justify-center h-[48px] mt-2 rounded-md bg-[#96683f] hover:bg-[#855b36] transition-colors ${inter.className} text-[13px] font-semibold text-[#ffffff] disabled:opacity-70 disabled:cursor-not-allowed`}
-                >
-                  {status === "loading" ? "Sending..." : "Submit Request"}
-                </button>
-                
-                <p className={`${inter.className} text-center text-[11px] text-[#9ca3af] mt-3`}>
-                  We respect your privacy. No spam, guaranteed.
-                </p>
-              </form>
+                  {/* Message */}
+                  <div>
+                    <label className={`${inter.className} block text-[11px] font-bold text-[#6b7280] uppercase tracking-wider mb-1.5`}>Message</label>
+                    <textarea 
+                      name="message"
+                      rows="3"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Where is the property, and what do you need help with?" 
+                      className={`${inter.className} w-full bg-[#ffffff] border border-[#d1d5db] rounded-md px-3.5 py-2.5 text-sm text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all resize-none`}
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button 
+                    type="submit"
+                    disabled={status === "loading"}
+                    className={`w-full flex items-center justify-center h-[50px] mt-4 rounded-md bg-[#96683f] hover:bg-[#855b36] transition-all duration-300 ${inter.className} text-[13px] font-bold text-[#ffffff] uppercase tracking-widest disabled:opacity-70 disabled:cursor-not-allowed shadow-md hover:shadow-lg`}
+                  >
+                    {status === "loading" ? "Sending..." : "Request A Call"}
+                  </button>
+                  
+                  <p className={`${inter.className} text-center text-[12px] text-[#6b7280] mt-4`}>
+                    Free consultation. No obligation.
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
 

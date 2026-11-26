@@ -19,7 +19,7 @@ const inter = Inter({
 
 // 👈 2. Define your custom links here
 const EXPLORE_LINKS = [
-  { name: "Home", href: "/propertymanagementservices" },
+  // { name: "Home", href: "/propertymanagementservices" },
   { name: "Why Choose Us", href: "#whychooseus" },
   { name: "Services", href: "#services" },
   { name: "FAQs", href: "#faq" },
@@ -234,7 +234,7 @@ export default function Footer() {
                     href="mailto:hello@dubaihomes.com"
                     className="hover:text-[#96683f] transition-colors"
                   >
-                    hello@dubaihomes.com
+                    managedubaiproperty@gmail.co
                   </a>
                 </li>
               </ul>

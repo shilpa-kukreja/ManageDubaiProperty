@@ -1,47 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Inter, Playfair_Display } from "next/font/google";
+import Link from "next/link";
+import { Playfair_Display, Inter } from "next/font/google";
 
-// 1. Initialize Fonts
-const inter = Inter({
-  subsets: ["latin"],
+const playfair = Playfair_Display({ 
+  subsets: ["latin"], 
   weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  variable: "--font-playfair"
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+const inter = Inter({ 
+  subsets: ["latin"], 
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter"
 });
-
-const HERO_IMAGES = [
-  "/hero/hero.webp",
-  // "/hero/hero-2.jpg",
-  // "/hero/hero-3.jpg",
-];
 
 const CONTACT_LINKS = [
   {
     label: "+971 55 509 9157",
     href: "tel:+971555099157",
     icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
       </svg>
     ),
+    primary: true,
   },
   {
     label: "WhatsApp us",
@@ -52,218 +36,109 @@ const CONTACT_LINKS = [
       </svg>
     ),
   },
-  {
-    label: "info@binayah.com",
-    href: "mailto:info@binayah.com",
-    icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-    ),
-  },
+  // {
+  //   label: "info@binayah.com",
+  //   href: "mailto:info@binayah.com",
+  //   icon: (
+  //     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+  //       <polyline points="22,6 12,13 2,6" />
+  //     </svg>
+  //   ),
+  // },
 ];
 
-export default function Hero() {
-  const [currentImage, setCurrentImage] = useState(0);
+const STATS = [
+  { value: "Since 2007", label: "Managing Dubai Property" },
+  { value: "RERA 1162", label: "Fully Compliant" },
+  { value: "24/7", label: "Licensed Maintenance" },
+  { value: "4.5★", label: "119 Google Reviews" },
+];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
+export default function ServiceHero() {
   return (
-    /* Apply the font variables to the main wrapper */
-    <section className={`${inter.variable} ${playfair.variable} relative min-h-screen flex items-center justify-center overflow-hidden bg-[#111827]`}>
-      {/* ================= CAROUSEL BACKGROUND ================= */}
-      <div className="absolute inset-0 w-full h-full">
-        {HERO_IMAGES.map((src, index) => (
-          <div
-            key={src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentImage ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={src}
-              alt={`Dubai Property ${index + 1}`}
-              fill
-              priority={index === 0}
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
-        ))}
+    <section className={`${playfair.variable} ${inter.variable} relative w-full pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-[#151310]`}>
+      
+      {/* Background Image & Overlays */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/hero/hero.webp" // Replace with your preferred Dubai skyline image
+          alt="Dubai Property"
+          fill
+          priority
+          className="object-cover object-center opacity-40"
+        />
+        {/* Dark gradient overlay to blend with your theme */}
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#151310] via-[#151310]/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#151310] via-transparent to-transparent" /> */}
       </div>
 
-      {/* GRADIENT OVERLAYS */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 z-0" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        
+        {/* Breadcrumb Navigation */}
+        <nav className={`${inter.className} flex items-center gap-2 text-[12px] md:text-[13px] tracking-wide mb-8`}>
+          <Link href="/" className="text-white/60 hover:text-[#96683f] transition-colors">Home</Link>
+          <span className="text-white/30">/</span>
+          <Link href="/services" className="text-white/60 hover:text-[#96683f] transition-colors">Services</Link>
+          <span className="text-white/30">/</span>
+          <span className="text-white font-medium">Property Management</span>
+        </nav>
 
-      {/* ================= MIDDLE CONTENT ================= */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-32">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
-          {/* Left Side: Heading + Subtext */}
-          <div className="max-w-3xl">
-            {/* Main Heading using Playfair Display */}
-            <h1
-              className="font-[family-name:var(--font-playfair)] font-medium text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] tracking-tight mb-6"
+        {/* Eyebrow */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="w-8 h-[1px] bg-[#96683f]" />
+          <span className={`${inter.className} text-[#96683f] text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em]`}>
+            Property Management &middot; Dubai
+          </span>
+        </div>
+
+        {/* Main Heading */}
+        <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[4rem] font-medium text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+          No Matter Where You Are, <span className="italic text-[#96683f]">Your Property Is In Safe Hands</span>
+        </h1>
+
+        {/* Subtext */}
+        <p className={`${inter.className} text-white/70 text-[15px] md:text-lg leading-relaxed max-w-2xl mb-10`}>
+          Let the professionals manage it. We handle tenants, rent collection, snagging, maintenance and reporting so your Dubai property stays occupied, compliant and profitable, whether you live here or overseas.
+        </p>
+
+        {/* Contact Buttons Row */}
+        <div className="flex flex-wrap items-center gap-4 mb-16">
+          {CONTACT_LINKS.map((contact) => (
+            <a
+              key={contact.label}
+              href={contact.href}
+              className={`${inter.className} group inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-[13px] md:text-[14px] font-semibold transition-all duration-300 ${
+                contact.primary
+                  ? "bg-[#96683f] text-white hover:bg-[#855b36] shadow-lg"
+                  : "bg-white/10 border border-white/20 text-white backdrop-blur-md hover:bg-white/20 hover:border-white/40"
+              }`}
             >
-              Your Dubai Property, Expertly Looked After While You Get On With Life
-            </h1>
-            <p
-              className={`${inter.className} text-white/70 text-[16px] md:text-[17px] leading-[1.7] max-w-xl mb-8`}
+              <span className={`${contact.primary ? "text-white" : "text-[#96683f]"}`}>
+                {contact.icon}
+              </span>
+              {contact.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Glassmorphic Stats Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl">
+          {STATS.map((stat, index) => (
+            <div 
+              key={index}
+              className="bg-white/[0.05] border border-white/10 backdrop-blur-md rounded-xl p-5 md:p-6 hover:bg-white/[0.08] transition-colors duration-300"
             >
-              From finding and vetting tenants to collecting rent, inspecting units, arranging repairs and sending clear reports, Binayah runs the daily work so your property stays let, legally in order and earning steadily, whether you are in Dubai or on another continent.
-            </p>
-
-            {/* Contact quick links */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-              {CONTACT_LINKS.map((c) => (
-                <a
-                  key={c.href}
-                  href={c.href}
-                  target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    c.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className={`${inter.className} group inline-flex items-center gap-2 text-white/85 hover:text-[#e1c8b4] text-[14px] font-medium transition-colors duration-300`}
-                >
-                  <span className="text-[#e1c8b4] group-hover:text-white transition-colors duration-300">
-                    {c.icon}
-                  </span>
-                  {c.label}
-                </a>
-              ))}
+              <p className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl font-semibold text-white mb-1">
+                {stat.value}
+              </p>
+              <p className={`${inter.className} text-white/60 text-[10px] md:text-[11px] uppercase tracking-[0.1em] font-medium`}>
+                {stat.label}
+              </p>
             </div>
-          </div>
-
-          {/* Right Side: Address & Buttons */}
-          <div className="flex flex-col items-start lg:items-end shrink-0 pb-2">
-            <p
-              className={`${inter.className} text-[14px] text-white/75 mb-6 tracking-wide`}
-            >
-              320 40th Street B4, Dubai, UAE 10019
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3">
-              {/* Button 1: Schedule a Visit */}
-              <Link
-                href="/propertymanagementservices#consulation"
-                className={`${inter.className} inline-flex items-center justify-center h-[46px] px-6 rounded-lg bg-[#b07e50] text-white text-[14px] font-semibold hover:bg-[#96683f] transition-colors duration-300`}
-              >
-                Schedule a Visit
-              </Link>
-
-              {/* Button 2: Explore Property */}
-              <Link
-                href="/propertymanagementservices#services"
-                className={`${inter.className} inline-flex items-center justify-center h-[46px] px-6 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white text-[14px] font-semibold hover:bg-white hover:text-[#111827] hover:border-white transition-colors duration-300`}
-              >
-                Explore Services
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ================= FLOATING BOTTOM BOOKING BAR ================= */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 hidden lg:flex w-full h-[80px] bg-[#111827]/30 backdrop-blur-md border-t border-white/10">
-        {/* Location */}
-        <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
-          {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
-            Years of Dubai property management experience
-          </span>
-          <div
-            className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
-          >
-            <span>Since 2007</span>
-          </div>
+          ))}
         </div>
 
-        {/* Property Type */}
-        <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
-          {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
-            Licensed and fully compliant
-          </span>
-          <div
-            className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
-          >
-            <div className="flex items-center gap-2">
-              <svg
-                className="w-4 h-4 text-[#e1c8b4]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                />
-              </svg>
-              <span>RERA 1162</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Service */}
-        <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
-          {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
-            Licensed maintenance on call
-          </span>
-          <div
-            className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
-          >
-            <span>24/7</span>
-          </div>
-        </div>
-
-        {/* Budget */}
-        <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
-          {/* Changed to Playfair Display */}
-          <span
-            className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium"
-          >
-            Rated by 119 Google reviewers
-          </span>
-          <div
-            className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
-          >
-            <span>4.5★</span>
-          </div>
-        </div>
-
-        {/* Action Button */}
-        {/* <div className="w-[200px]">
-          <button
-            className={`${inter.className} w-full h-full bg-[#b07e50] text-white text-[13px] font-semibold hover:bg-[#96683f] transition-colors duration-300`}
-          >
-            Get Started
-          </button>
-        </div> */}
       </div>
     </section>
   );

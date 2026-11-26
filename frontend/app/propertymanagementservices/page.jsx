@@ -19,9 +19,10 @@ export default function Home() {
       <ConsultationSection />
       <WhyChooseUs/>
       <Services />
+       <ImageSection />
       <EightStepsToSuccess />
       <WhatsIncluded />
-      <ImageSection />
+     
       <FAQSection />
       <Testimonials />
       <CTA />

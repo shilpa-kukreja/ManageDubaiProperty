@@ -18,130 +18,98 @@ const inter = Inter({
 
 const STEPS = [
   {
-    number: "01",
-    title: "Property Inspection",
+    number: "1",
     description:
-      "Engineers, architects and technical inspectors examine the building, assess its physical condition and prepare a written report.",
+      "Engineers, architects and technical inspectors research, evaluate and report on the physical condition of your property.",
   },
   {
-    number: "02",
-    title: "Market Valuation",
+    number: "2",
     description:
-      "You receive professional advice on repairs, replacements, improvements and likely future problems that might otherwise create financial exposure.",
+      "Expert recommendations for repairs, replacements, upgrades and predicted concerns that could expose you to financial risk.",
   },
   {
-    number: "03",
-    title: "Professional Marketing",
+    number: "3",
     description:
-      "Each defect is captured with photographs and explanations, and its status is recorded both before and after it is fixed.",
+      "Every defect documented with images and explanations, plus the latest status of each fault before and after correction.",
   },
   {
-    number: "04",
-    title: "Tenant Screening",
+    number: "4",
     description:
-      "Every inspection runs through our own Oracle-based inspection app, designed in-house to deliver accurate, real-time reporting.",
+      "Inspections run on our Oracle-based inspection app, built in-house for precise real-time reporting.",
   },
   {
-    number: "05",
-    title: "Lease Negotiation",
+    number: "5",
     description:
-      "Approved members of the developer’s team can browse the complete library of defect photos and descriptions.",
+      "Authorised developer team members get access to the full database of defect images and descriptions.",
   },
   {
-    number: "06",
-    title: "Ejari & Compliance",
+    number: "6",
     description:
-      "When the inspection ends, we issue a full condition report for your files.",
+      "A comprehensive condition report is issued for your records once the inspection is complete.",
   },
- 
 ];
 
-export default function EightStepsToSuccess() {
+export default function DeveloperSnagging() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <>
-      {/* Applied font variables to the section */}
-      <section
-        className={`${playfair.variable} ${inter.variable} py-20 bg-[#151310] relative overflow-hidden selection:bg-[#96683f] selection:text-white`}
-      >
-        {/* Subtle Ambient Light */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#96683f]/5 blur-[150px] rounded-full pointer-events-none" />
-
+      <section className={`${playfair.variable} ${inter.variable} py-8 md:py-12 bg-white relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
-            {/* LEFT SIDE: Sticky Editorial Header */}
-            <div className="lg:w-1/3 lg:sticky lg:top-32">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="w-8 h-[1px] bg-[#96683f]" />
-                <span
-                  className={`${inter.className} text-[#96683f] text-[12px] font-semibold uppercase tracking-[0.12em]`}
-                >
-                  Built for Developers
-                </span>
-              </div>
-
-              {/* 2. Applied Playfair to Main Heading */}
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-[2.75rem] font-medium text-white leading-[1.15] tracking-tight mb-6">
-                Snagging Solutions for{" "}
-                <span className="italic text-[#96683f]">Developers</span>
-              </h2>
-
-              <p
-                className={`${inter.className} text-[#ffffff]/60 text-[16px] leading-[1.75] mb-8 max-w-md`}
-              >
-                A successful project handover starts with careful assessment and
-                inspection. Once construction reaches substantial completion, a
-                complete snagging and handover inspection helps you accept the
-                development from the contractor in the best possible state.
-              </p>
-
-              
-
-              {/* Button */}
-              <div>
-                <button
-                  onClick={() => setIsPopupOpen(true)}
-                  className={`inline-flex items-center justify-center h-[48px] px-8 rounded-sm bg-[#96683f] hover:bg-[#855b36] transition-colors ${inter.className} text-[13px] font-semibold text-white uppercase tracking-wider`}
-                >
-                  Get Started
-                </button>
-              </div>
+          
+          {/* ================= CENTERED HEADER ================= */}
+          <div className="flex flex-col max-w-3xl mb-16">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-8 h-[1px] bg-[#96683f]" />
+              <span className={`${inter.className} text-[#96683f] text-[12px] font-bold uppercase tracking-[0.2em]`}>
+                For Developers
+              </span>
             </div>
 
-            {/* RIGHT SIDE: The Grid */}
-            <div className="lg:w-2/3 w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-14">
-                {STEPS.map((step, index) => (
-                  <div key={index} className="group relative flex flex-col">
-                    {/* Top accent line that expands on hover */}
-                    <div className="w-full h-[1px] bg-[#ffffff]/10 mb-6 relative overflow-hidden">
-                      <div className="absolute left-0 top-0 h-full w-0 bg-[#96683f] transition-all duration-500 ease-out group-hover:w-full" />
-                    </div>
+            {/* Main Heading */}
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-medium text-[#111827] leading-[1.15] tracking-tight mb-6">
+              Snagging Service <span className="italic text-[#96683f]">For Developers</span>
+            </h2>
 
-                    <div className="flex items-baseline gap-4 mb-3">
-                      {/* 3. Applied Playfair to Numbers */}
-                      <span className="font-[family-name:var(--font-playfair)] text-[28px] font-medium text-[#ffffff]/20 transition-colors duration-300 group-hover:text-[#96683f]">
-                        {step.number}
-                      </span>
+            {/* Subtext */}
+            <p className={`${inter.className} text-[#4b5563] text-[15px] md:text-lg leading-relaxed max-w-2xl mb-8`}>
+              Delivering a new development relies on thorough appraisal and inspection. At substantial completion, a full snagging and handover inspection makes sure you receive the development from your contractor in the best possible condition.
+            </p>
 
-                      {/* 4. Applied Playfair to Step Titles */}
-                      {/* <h3 className="font-[family-name:var(--font-playfair)] text-[20px] font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-[#96683f]">
-                        {step.title}
-                      </h3> */}
-                    </div>
-
-                    {/* Description */}
-                    <p
-                      className={`${inter.className} text-[#ffffff]/55 text-[15px] leading-[1.7] transition-colors duration-300 group-hover:text-[#ffffff]/80`}
-                    >
-                      {step.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            {/* Button */}
+            <div>
+              <button
+                onClick={() => setIsPopupOpen(true)}
+                className={`inline-flex items-center justify-center h-[48px] px-8 rounded-sm bg-[#96683f] hover:bg-[#855b36] transition-colors ${inter.className} text-[13px] font-semibold text-white uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5 duration-300`}
+              >
+                Get Started
+              </button>
             </div>
           </div>
+
+          {/* ================= 3-COLUMN CARD GRID ================= */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {STEPS.map((step, index) => (
+              <div 
+                key={index}
+                className="group bg-white border border-[#e5e7eb] rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(150,104,63,0.15)] hover:-translate-y-1 hover:border-[#96683f]/30"
+              >
+                {/* Number Badge */}
+                <div className="w-10 h-10 rounded-md bg-[#96683f] flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  <span className={`${inter.className} text-white text-[15px] font-bold`}>
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className={`${inter.className} text-[#6b7280] text-[15px] leading-[1.7]`}>
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 

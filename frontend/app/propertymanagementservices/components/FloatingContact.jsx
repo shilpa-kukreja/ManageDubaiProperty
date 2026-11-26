@@ -61,7 +61,7 @@ export default function FloatingContact() {
         </a>
 
         {/* Email */}
-        <a
+        {/* <a
           href="mailto:hello@dubaihomes.com"
           className={`flex-1 flex items-center justify-center gap-2 h-12 bg-white border border-[#b07e50] text-[#b07e50] rounded-xl ${inter.className} text-[13px] font-semibold`}
         >
@@ -70,7 +70,7 @@ export default function FloatingContact() {
             <polyline points="22,6 12,13 2,6" />
           </svg>
           Email
-        </a>
+        </a> */}
       </div>
     </>
   );
