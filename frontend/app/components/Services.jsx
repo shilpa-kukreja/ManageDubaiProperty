@@ -86,6 +86,7 @@ export default function ServicesSection() {
 
   return (
     <section
+       id="services"
       ref={sectionRef}
       className={`${playfair.variable} ${inter.variable} relative w-full bg-[#fcf9f6] py-8 md:py-12 overflow-hidden`}
     >

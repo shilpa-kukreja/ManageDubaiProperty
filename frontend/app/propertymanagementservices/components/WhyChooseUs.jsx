@@ -97,7 +97,7 @@ export default function OverviewSection() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="group bg-white border border-[#e5e7eb] rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(150,104,63,0.15)] hover:-translate-y-1"
+              className="group bg-white border border-[#e5e7eb] rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(150,104,63,0.15)] hover:-translate-y-1"
             >
               {/* Icon Container - Soft rounded square matching the reference */}
               <div className="w-12 h-12 rounded-2xl bg-[#f9f4f2] flex items-center justify-center mb-6 text-[#c08575] group-hover:bg-[#f4e8e5] transition-colors duration-300">

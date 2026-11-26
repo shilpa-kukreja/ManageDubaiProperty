@@ -93,7 +93,7 @@ export default function DeveloperSnagging() {
             {STEPS.map((step, index) => (
               <div 
                 key={index}
-                className="group bg-white border border-[#e5e7eb] rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(150,104,63,0.15)] hover:-translate-y-1 hover:border-[#96683f]/30"
+                className="group bg-white border border-[#e5e7eb] rounded-2xl p-4 transition-all duration-300 hover:shadow-[0_8px_30px_-12px_rgba(150,104,63,0.15)] hover:-translate-y-1 hover:border-[#96683f]/30"
               >
                 {/* Number Badge */}
                 <div className="w-10 h-10 rounded-md bg-[#96683f] flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">

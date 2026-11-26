@@ -1,10 +1,17 @@
 "use client";
 
-import { Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+// 1. Initialize Fonts
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +36,6 @@ export default function ContactPage() {
     setStatus("loading");
 
     try {
-      // Connect to the /api/contact route we just created
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact`,
         {
@@ -46,8 +52,6 @@ export default function ContactPage() {
       if (response.ok) {
         setStatus("success");
         alert("Thank you! Your message has been sent successfully.");
-
-        // Reset the form
         setFormData({
           name: "",
           email: "",
@@ -68,7 +72,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#faf7f3]">
+      <main className={`${playfair.variable} ${inter.variable} min-h-screen bg-[#faf7f3]`}>
         {/* ================= 1. FULL-WIDTH BANNER ================= */}
         <section className="relative w-full h-[40vh] md:h-[40vh] bg-[#151310]">
           <Image
@@ -87,31 +91,29 @@ export default function ContactPage() {
             {/* Section Header */}
             <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-14">
               <div className="inline-flex items-center gap-3 mb-6">
-                <span className="w-8 h-[1px] bg-[#b07e50]" />
+                <span className="w-8 h-[1px] bg-[#96683f]" />
                 <span
                   className={`${inter.className} text-[#96683f] text-[12px] font-semibold uppercase tracking-[0.12em]`}
                 >
                   Get in Touch
                 </span>
-                <span className="w-8 h-[1px] bg-[#b07e50]" />
+                <span className="w-8 h-[1px] bg-[#96683f]" />
               </div>
-              <h1
-                className={`${inter.className} text-3xl md:text-4xl lg:text-[40px] font-semibold text-[#111827] leading-[1.15] tracking-[-0.01em]`}
-              >
-                We'd love to hear from you
+              {/* 2. Applied Playfair to Main Heading */}
+              <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-medium text-[#111827] leading-[1.15] tracking-tight">
+                We'd love to <span className="italic text-[#96683f]">hear from you</span>
               </h1>
             </div>
 
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
               {/* LEFT SIDE: Premium Form */}
               <div className="lg:w-[60%]">
-                <div className="h-full bg-white rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_-20px_rgba(176,126,80,0.1)] border border-[#f0e7dc] relative overflow-hidden">
+                <div className="h-full bg-white rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_-20px_rgba(150,104,63,0.1)] border border-[#f0e7dc] relative overflow-hidden">
                   {/* Subtle Top Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#b07e50] to-transparent opacity-80" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#96683f] to-transparent opacity-80" />
 
-                  <h2
-                    className={`${inter.className} text-[22px] font-semibold text-[#111827] tracking-[-0.01em] mb-8`}
-                  >
+                  {/* 3. Applied Playfair to Form Title */}
+                  <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#111827] tracking-tight mb-8">
                     Send us a message
                   </h2>
 
@@ -130,7 +132,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#b07e50] focus:ring-1 focus:ring-[#b07e50] transition-all`}
+                        className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
                       />
                     </div>
 
@@ -149,7 +151,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@example.com"
-                          className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#b07e50] focus:ring-1 focus:ring-[#b07e50] transition-all`}
+                          className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
                         />
                       </div>
                       <div>
@@ -165,7 +167,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+971 50 123 4567"
-                          className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#b07e50] focus:ring-1 focus:ring-[#b07e50] transition-all`}
+                          className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all`}
                         />
                       </div>
                     </div>
@@ -184,15 +186,15 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your property requirements..."
-                        className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#b07e50] focus:ring-1 focus:ring-[#b07e50] transition-all resize-none`}
+                        className={`${inter.className} w-full  border border-[#ece3d8] rounded-lg px-4 py-3.5 text-[15px] text-[#111827] placeholder-[#9ca3af] focus:outline-none focus:border-[#96683f] focus:ring-1 focus:ring-[#96683f] transition-all resize-none`}
                       />
                     </div>
 
-                    {/* Submit Button — flat, professional */}
+                    {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className={`${inter.className} w-full h-[52px] mt-2 rounded-lg bg-[#b07e50] text-white text-[14px] font-semibold hover:bg-[#96683f] transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed`}
+                      className={`${inter.className} w-full h-[52px] mt-2 rounded-lg bg-[#96683f] text-white text-[14px] font-semibold hover:bg-[#855b36] transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed`}
                     >
                       {status === "loading" ? "Sending..." : "Send Message"}
                     </button>
@@ -202,21 +204,20 @@ export default function ContactPage() {
 
               {/* RIGHT SIDE: Contact Details */}
               <div className="lg:w-[40%]">
-                <div className="h-full bg-white rounded-2xl p-8 md:p-10 shadow-[0_20px_50px_-20px_rgba(176,126,80,0.1)] border border-[#f0e7dc] relative overflow-hidden flex flex-col justify-between">
+                <div className="h-full bg-white rounded-2xl p-8 md:p-10 shadow-[0_20px_50px_-20px_rgba(150,104,63,0.1)] border border-[#f0e7dc] relative overflow-hidden flex flex-col justify-between">
                   {/* Subtle Top Accent Line */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#b07e50] to-transparent opacity-80" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#96683f] to-transparent opacity-80" />
 
                   <div>
-                    <h2
-                      className={`${inter.className} text-[22px] font-semibold text-[#111827] tracking-[-0.01em] mb-8`}
-                    >
+                    {/* 4. Applied Playfair to Contact Info Title */}
+                    <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#111827] tracking-tight mb-8">
                       Contact Information
                     </h2>
 
                     <div className="space-y-7">
                       {/* Phone */}
                       <div className="flex items-start gap-4 group">
-                        <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#b07e50] shrink-0 transition-colors duration-300 group-hover:bg-[#b07e50] group-hover:text-white group-hover:border-[#b07e50]">
+                        <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#96683f] shrink-0 transition-colors duration-300 group-hover:bg-[#96683f] group-hover:text-white group-hover:border-[#96683f]">
                           <svg
                             width="20"
                             height="20"
@@ -231,9 +232,8 @@ export default function ContactPage() {
                           </svg>
                         </div>
                         <div>
-                          <h4
-                            className={`${inter.className} text-[#111827] font-semibold text-[16px] tracking-[-0.01em] mb-1`}
-                          >
+                          {/* 5. Applied Playfair to Details Titles */}
+                          <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[18px] tracking-tight mb-1">
                             Call Us
                           </h4>
                           <p
@@ -243,7 +243,7 @@ export default function ContactPage() {
                           </p>
                           <a
                             href="tel:+971000000000"
-                            className={`${inter.className} text-[#b07e50] font-semibold text-[14px] hover:text-[#96683f] transition-colors`}
+                            className={`${inter.className} text-[#96683f] font-semibold text-[14px] hover:text-[#855b36] transition-colors`}
                           >
                             +971 XX XXX XXXX
                           </a>
@@ -252,7 +252,7 @@ export default function ContactPage() {
 
                       {/* Email */}
                       <div className="flex items-start gap-4 group">
-                        <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#b07e50] shrink-0 transition-colors duration-300 group-hover:bg-[#b07e50] group-hover:text-white group-hover:border-[#b07e50]">
+                        <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#96683f] shrink-0 transition-colors duration-300 group-hover:bg-[#96683f] group-hover:text-white group-hover:border-[#96683f]">
                           <svg
                             width="20"
                             height="20"
@@ -268,9 +268,7 @@ export default function ContactPage() {
                           </svg>
                         </div>
                         <div>
-                          <h4
-                            className={`${inter.className} text-[#111827] font-semibold text-[16px] tracking-[-0.01em] mb-1`}
-                          >
+                          <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[18px] tracking-tight mb-1">
                             Email Us
                           </h4>
                           <p
@@ -280,7 +278,7 @@ export default function ContactPage() {
                           </p>
                           <a
                             href="mailto:info@dubaihomes.com"
-                            className={`${inter.className} text-[#b07e50] font-semibold text-[14px] hover:text-[#96683f] transition-colors`}
+                            className={`${inter.className} text-[#96683f] font-semibold text-[14px] hover:text-[#855b36] transition-colors`}
                           >
                             info@dubaihomes.com
                           </a>
@@ -289,7 +287,7 @@ export default function ContactPage() {
 
                       {/* Office */}
                       <div className="flex items-start gap-4 group">
-                        <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#b07e50] shrink-0 transition-colors duration-300 group-hover:bg-[#b07e50] group-hover:text-white group-hover:border-[#b07e50]">
+                        <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#96683f] shrink-0 transition-colors duration-300 group-hover:bg-[#96683f] group-hover:text-white group-hover:border-[#96683f]">
                           <svg
                             width="20"
                             height="20"
@@ -305,9 +303,7 @@ export default function ContactPage() {
                           </svg>
                         </div>
                         <div>
-                          <h4
-                            className={`${inter.className} text-[#111827] font-semibold text-[16px] tracking-[-0.01em] mb-1`}
-                          >
+                          <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[18px] tracking-tight mb-1">
                             Visit Us
                           </h4>
                           <p
@@ -316,7 +312,7 @@ export default function ContactPage() {
                             Come say hello at our office
                           </p>
                           <p
-                            className={`${inter.className} text-[#b07e50] font-semibold text-[14px]`}
+                            className={`${inter.className} text-[#96683f] font-semibold text-[14px]`}
                           >
                             Downtown Dubai, UAE
                           </p>
@@ -338,7 +334,7 @@ export default function ContactPage() {
                           <a
                             key={social}
                             href="#"
-                            className="w-9 h-9 rounded-full bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#6b7280] hover:text-[#b07e50] hover:border-[#b07e50] hover:bg-white transition-colors duration-300"
+                            className="w-9 h-9 rounded-full bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#6b7280] hover:text-[#96683f] hover:border-[#96683f] hover:bg-white transition-colors duration-300"
                           >
                             <span className="sr-only">{social}</span>
                             {social === "instagram" && (
@@ -422,11 +418,11 @@ export default function ContactPage() {
         {/* ================= 3. GOOGLE MAP ================= */}
         <section className="py-20 relative z-10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="bg-white rounded-2xl p-4 md:p-6 shadow-[0_20px_50px_-20px_rgba(176,126,80,0.1)] border border-[#f0e7dc] flex flex-col lg:flex-row overflow-hidden">
+            <div className="bg-white rounded-2xl p-4 md:p-6 shadow-[0_20px_50px_-20px_rgba(150,104,63,0.1)] border border-[#f0e7dc] flex flex-col lg:flex-row overflow-hidden">
               {/* Left Side: Address Details */}
               <div className="lg:w-1/3 p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-[#f3f4f6]">
                 <div className="inline-flex items-center gap-3 mb-6">
-                  <span className="w-8 h-[1px] bg-[#b07e50]" />
+                  <span className="w-8 h-[1px] bg-[#96683f]" />
                   <span
                     className={`${inter.className} text-[#96683f] text-[12px] font-semibold uppercase tracking-[0.12em]`}
                   >
@@ -434,16 +430,15 @@ export default function ContactPage() {
                   </span>
                 </div>
 
-                <h2
-                  className={`${inter.className} text-2xl md:text-3xl font-semibold text-[#111827] leading-[1.2] tracking-[-0.01em] mb-8`}
-                >
-                  Find our Dubai office
+                {/* 6. Applied Playfair to Map Section Title */}
+                <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-[#111827] leading-[1.2] tracking-tight mb-8">
+                  Find our <span className="italic text-[#96683f]">Dubai office</span>
                 </h2>
 
                 <div className="space-y-6">
                   {/* Company Name */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#b07e50] shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#96683f] shrink-0">
                       <svg
                         width="18"
                         height="18"
@@ -459,9 +454,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4
-                        className={`${inter.className} text-[#111827] font-semibold text-[15px] mt-2 tracking-[-0.01em]`}
-                      >
+                      <h4 className="font-[family-name:var(--font-playfair)] text-[#111827] font-semibold text-[16px] mt-2 tracking-tight">
                         Binayah Properties
                       </h4>
                     </div>
@@ -469,7 +462,7 @@ export default function ContactPage() {
 
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#b07e50] shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#96683f] shrink-0">
                       <svg
                         width="18"
                         height="18"
@@ -503,7 +496,7 @@ export default function ContactPage() {
                   href="https://maps.google.com/?q=Liberty+Building+Al+Quoz+3+Sheikh+Zayed+Road+Dubai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${inter.className} inline-flex items-center gap-2 mt-8 text-[#b07e50] font-semibold text-[13px] hover:text-[#96683f] transition-colors group`}
+                  className={`${inter.className} inline-flex items-center gap-2 mt-8 text-[#96683f] font-semibold text-[13px] hover:text-[#855b36] transition-colors group`}
                 >
                   Get Directions
                   <svg
@@ -537,7 +530,7 @@ export default function ContactPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Binayah Properties Office Location"
                 />
-                <div className="absolute inset-0 pointer-events-none bg-[#b07e50]/5 mix-blend-multiply" />
+                <div className="absolute inset-0 pointer-events-none bg-[#96683f]/5 mix-blend-multiply" />
               </div>
             </div>
           </div>

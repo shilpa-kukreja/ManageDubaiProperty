@@ -108,6 +108,7 @@ export default function FeaturedListingsSection() {
 
   return (
     <section
+      id="properties"
       ref={sectionRef}
       className={`${playfair.variable} ${inter.variable} relative w-full bg-white py-24 md:py-32 overflow-hidden`}
     >

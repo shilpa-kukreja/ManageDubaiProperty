@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default function AboutBanner() {
   return (
-    <section className="relative w-full h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden bg-[#151310]">
+    <section className="relative w-full h-[50vh] md:h-[50vh] flex items-center justify-center overflow-hidden bg-[#151310]">
       
       {/* Desktop Banner */}
       <div className="hidden md:block absolute inset-0">

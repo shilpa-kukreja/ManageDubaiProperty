@@ -69,11 +69,11 @@ export default function Footer() {
 
   return (
     <footer
-      className={`${playfair.variable} ${inter.variable} bg-[#0f0d0b] text-white pt-16 pb-24 lg:pb-8 px-6 md:px-12 lg:px-24 selection:bg-[#96683f] selection:text-white`}
+      className={`${playfair.variable} ${inter.variable} bg-[#0f0d0b] text-white pt-8 pb-24 lg:pb-8 px-6 md:px-12 lg:px-24 selection:bg-[#96683f] selection:text-white`}
     >
       <div className="max-w-7xl mx-auto">
         {/* TOP SECTION: Newsletter & Brand */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 pb-12 border-b border-white/10">
+        {/* <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 pb-12 border-b border-white/10">
           <div className="max-w-md">
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-medium tracking-tight leading-[1.2] mb-3">
               Stay <span className="italic text-[#96683f]">informed</span>
@@ -102,7 +102,7 @@ export default function Footer() {
               {status === "loading" ? "Subscribing..." : "Subscribe"}
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* MIDDLE SECTION: Links & Brand Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 lg:gap-10 py-8 lg:py-14">

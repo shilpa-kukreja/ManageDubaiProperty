@@ -1,6 +1,13 @@
 "use client";
 
-import { Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
+
+// 1. Initialize Fonts
+const playfair = Playfair_Display({ 
+  subsets: ["latin"], 
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair"
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -93,23 +100,23 @@ const VALUES = [
 
 export default function CoreValues() {
   return (
-    <section className="py-12 bg-[#faf7f3] relative overflow-hidden">
+    /* Applied font variables to the section */
+    <section className={`${playfair.variable} ${inter.variable} py-20 md:py-28 bg-[#fcfbf9] relative overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[1px] bg-[#b07e50]" />
-            <span
-              className={`${inter.className} text-[#96683f] text-[12px] font-semibold uppercase tracking-[0.12em]`}
-            >
+            <span className="w-8 h-[1px] bg-[#96683f]" />
+            <span className={`${inter.className} text-[#96683f] text-[12px] font-bold uppercase tracking-[0.2em]`}>
               Our Values
             </span>
-            <span className="w-8 h-[1px] bg-[#b07e50]" />
+            <span className="w-8 h-[1px] bg-[#96683f]" />
           </div>
-          <h2
-            className={`${inter.className} text-3xl md:text-4xl lg:text-[40px] font-semibold text-[#111827] leading-[1.15] tracking-[-0.01em]`}
-          >
-            The principles that guide us
+          
+          {/* 2. Applied Playfair to Main Heading */}
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-medium text-[#111827] leading-[1.15] tracking-tight">
+            The principles that <span className="italic text-[#96683f]">guide us</span>
           </h2>
         </div>
 
@@ -118,27 +125,23 @@ export default function CoreValues() {
           {VALUES.map((value, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-xl p-7 border border-[#e5e7eb] hover:border-[#d6c4b0] hover:shadow-[0_8px_30px_-12px_rgba(176,126,80,0.15)] transition-all duration-300 flex flex-col"
+              className="group relative bg-white rounded-xl p-7 border border-[#e5e7eb] hover:border-[#96683f]/40 hover:shadow-[0_8px_30px_-12px_rgba(150,104,63,0.15)] transition-all duration-300 flex flex-col"
             >
               {/* Top Accent Line */}
-              <div className="absolute top-0 left-7 right-7 h-[2px] bg-gradient-to-r from-transparent via-[#b07e50]/0 to-transparent transition-all duration-300 group-hover:via-[#b07e50]" />
+              <div className="absolute top-0 left-7 right-7 h-[2px] bg-gradient-to-r from-transparent via-[#96683f]/0 to-transparent transition-all duration-300 group-hover:via-[#96683f]" />
 
               {/* Icon */}
-              <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#b07e50] mb-6 transition-colors duration-300 group-hover:bg-[#b07e50] group-hover:text-white group-hover:border-[#b07e50]">
+              <div className="w-12 h-12 rounded-lg bg-[#faf7f3] border border-[#f0e7dc] flex items-center justify-center text-[#96683f] mb-6 transition-colors duration-300 group-hover:bg-[#96683f] group-hover:text-white group-hover:border-[#96683f]">
                 {value.icon}
               </div>
 
-              {/* Title */}
-              <h3
-                className={`${inter.className} text-[17px] font-semibold text-[#111827] tracking-[-0.01em] mb-2.5 transition-colors duration-300 group-hover:text-[#b07e50]`}
-              >
+              {/* 3. Applied Playfair to Card Titles */}
+              <h3 className="font-[family-name:var(--font-playfair)] text-[19px] font-semibold text-[#111827] tracking-tight mb-2.5 transition-colors duration-300 group-hover:text-[#96683f]">
                 {value.title}
               </h3>
 
               {/* Description */}
-              <p
-                className={`${inter.className} text-[#6b7280] text-[14px] leading-[1.7]`}
-              >
+              <p className={`${inter.className} text-[#6b7280] text-[14px] leading-[1.7]`}>
                 {value.description}
               </p>
             </div>

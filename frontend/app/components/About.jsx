@@ -48,6 +48,7 @@ export default function AboutSection() {
 
   return (
     <section
+    id="about"
       ref={sectionRef}
       className={`${plusJakarta.variable} ${inter.variable} ${playfair.variable} relative w-full bg-[#fcf9f6] py-20 md:py-28 overflow-hidden`}
     >

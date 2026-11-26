@@ -47,6 +47,16 @@ const FAQS = [
     answer:
       "Protecting and maintaining the value of your investment while giving you hassle-free ownership. That covers marketing, tenant screening, rent collection, maintenance and financial reporting.",
   },
+  {
+    question: "What are the procedures to get started?",
+    answer:
+      "Submit a contact request so we can connect, email us the necessary documents, then sign our tailored management agreement and settle the fee. After that your passive income runs stress-free.",
+  },
+  {
+    question: "Can a management company collect rent and serve notice?",
+    answer:
+      "Yes. Where the landlord has appointed the company to manage the property, it can collect rent, serve notice, maintain the property and handle issues with the tenancy on the owner’s behalf.",
+  },
 ];
 
 export default function FAQSection() {
