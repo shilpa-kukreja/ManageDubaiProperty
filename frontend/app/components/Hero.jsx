@@ -127,9 +127,9 @@ export default function Hero() {
             </div>
             {/* Main Heading using Playfair Display */}
             <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[4rem] font-medium text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
-              Professional Property Management in Dubai,{" "}
+              Your Property,{" "} <br/>
               <span className="italic text-[#96683f]">
-                Your Property, Our Responsibility
+                 Our Responsibility
               </span>
             </h1>
 
@@ -139,9 +139,7 @@ export default function Hero() {
             >
               Own a property in Dubai but don't have the time to manage it
               yourself? Our professional Dubai property management services make
-              property ownership simple, convenient and stress-free. From tenant
-              screening and rent collection to property maintenance, snagging
-              inspections and financial reporting, we take care of every detail.
+              property ownership simple, convenient and stress-free. 
             </p>
 
             {/* Contact Buttons Row */}

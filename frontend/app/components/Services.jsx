@@ -102,7 +102,7 @@ export default function ServicesSection() {
             <div className="flex items-center gap-3 mb-4">
               <span className="h-[1px] w-8 bg-[#96683f]" />
               <span className="font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.2em] uppercase text-[#96683f]">
-                Our Expertise
+                Our Property Management Expertise
               </span>
             </div>
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-[1.1] tracking-tight">
@@ -111,7 +111,7 @@ export default function ServicesSection() {
             </h2>
           </div>
           <p className="font-[family-name:var(--font-inter)] text-gray-500 text-sm md:text-base max-w-sm leading-relaxed">
-            We provide a comprehensive suite of real estate services designed to protect your asset and maximize your returns in Dubai's dynamic market.
+            We offer professional property management services in Dubai designed to simplify property ownership and protect your real estate investment. 
           </p>
         </div>
 

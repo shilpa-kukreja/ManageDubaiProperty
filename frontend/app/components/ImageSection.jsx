@@ -72,20 +72,20 @@ export default function ParallaxImageSection() {
         <div className="flex items-center gap-3 mb-6">
           <span className="h-[1px] w-8 bg-[#96683f]" />
           <span className="font-[family-name:var(--font-inter)] text-xs md:text-sm font-semibold tracking-[0.25em] uppercase text-[#96683f]">
-            Exclusive Living
+            Premium Properties in Dubai
           </span>
           <span className="h-[1px] w-8 bg-[#96683f]" />
         </div>
 
         {/* Serif Heading with Italic Accent */}
         <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-6 leading-[1.15] tracking-tight drop-shadow-xl">
-          Discover a Place You'll <br className="hidden md:block" />
-          <span className="italic text-[#96683f]">Love To Live</span>
+          Discover Your Ideal <br className="hidden md:block" />
+          <span className="italic text-[#96683f]">Home in Dubai </span>
         </h1>
 
         {/* Clean Subtext */}
         <p className="font-[family-name:var(--font-inter)] text-white/80 text-sm md:text-lg mb-10 max-w-2xl font-light tracking-wide leading-relaxed">
-          Experience a lifestyle that balances progress, comfort, and the joy of living.
+          Explore exceptional residential properties in Dubai that bring together modern design, everyday comfort and desirable locations. 
         </p>
 
         {/* Premium Button (Bronze) */}

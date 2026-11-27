@@ -25,26 +25,26 @@ export default function OverviewSection() {
     {
       title: "Delayed Rent Payments",
       description:
-        "Following up on overdue rent can be stressful, especially for overseas property owners. Professional rent collection and payment monitoring help maintain consistent cash flow and reduce the time spent dealing with payment delays.",
+        "Following up on overdue rent can be stressful, especially for overseas property owners.",
       iconSrc: "/overview/1.png",
       // iconSrc: "/process/1.jpg",
     },
     {
       title: "Unexpected repairs",
       description:
-        "A small leak becomes a big bill when nobody is on the ground to catch it.",
+        "Minor maintenance problems can quickly turn into expensive repairs when left unattended. ",
       iconSrc: "/overview/2.png",
     },
     {
       title: "Legal paperwork",
       description:
-        "Ejari, tenancy contracts and RERA compliance are easy to get wrong.",
+        "Professional assistance helps property owners keep essential paperwork organized and meet applicable compliance requirements.",
       iconSrc: "/overview/3.png",
     },
     {
       title: "Managing from abroad",
       description:
-        "Overseas owners lose control of viewings, handovers and tenant issues.",
+        "Managing a Dubai property from another country can make tenant communication, property viewings, inspections and handovers challenging. ",
       iconSrc: "/overview/4.png",
     },
   ];

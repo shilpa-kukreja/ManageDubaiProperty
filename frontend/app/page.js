@@ -27,7 +27,7 @@ export default function Home() {
       
       <FAQSection />
       <ImageSection />
-      <Properties/>
+      {/* <Properties/> */}
       <Testimonials />
       <CTA />
       <Footer />

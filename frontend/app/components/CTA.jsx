@@ -21,10 +21,12 @@ const inter = Inter({
 
 export default function CTASection() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+
   return (
     <>
-      <section className={`${playfair.variable} ${inter.variable} py-20 bg-white relative overflow-hidden`}>
+      <section
+        className={`${playfair.variable} ${inter.variable} py-20 bg-white relative overflow-hidden`}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Floating Premium Panel */}
           <div className="relative bg-[#151310] rounded-3xl overflow-hidden shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] border border-white/5">
@@ -40,22 +42,23 @@ export default function CTASection() {
                   <span
                     className={`${inter.className} text-[#96683f] text-[12px] font-bold uppercase tracking-[0.2em]`}
                   >
-                    Get Started
+                    Dubai Property Management
                   </span>
                 </div>
 
                 {/* 2. Applied Playfair Display with an italic accent */}
                 <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-white leading-[1.1] tracking-tight mb-6">
-                  Ready to hand over <br className="hidden md:block"/>
-                  the <span className="italic text-[#96683f]">keys?</span>
+                  Ready to <br className="hidden md:block" />
+                  hand over the{" "}
+                  <span className="italic text-[#96683f]">keys?</span>
                 </h2>
 
                 <p
                   className={`${inter.className} text-white/60 text-[16px] leading-[1.75] max-w-xl`}
                 >
-                  Speak directly with a dedicated property expert today. Whether
-                  you have a quick question or want a full management proposal,
-                  we're here to help.
+                  Need professional property management services in Dubai you
+                  can trust? Connect with our experienced property management
+                  team to discuss your requirements.
                 </p>
               </div>
 
@@ -70,7 +73,7 @@ export default function CTASection() {
                 >
                   {/* Shine effect */}
                   <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                  
+
                   <div className="relative z-10 flex items-center gap-3">
                     <svg
                       width="18"
@@ -93,7 +96,11 @@ export default function CTASection() {
                     stroke="currentColor"
                     strokeWidth="2"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </a>
 
@@ -128,7 +135,11 @@ export default function CTASection() {
                     stroke="currentColor"
                     strokeWidth="2"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </a>
 
@@ -164,7 +175,11 @@ export default function CTASection() {
                     stroke="currentColor"
                     strokeWidth="2"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </button>
               </div>

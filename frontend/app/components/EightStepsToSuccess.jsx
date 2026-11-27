@@ -20,37 +20,37 @@ const PROCESS_STEPS = [
   {
     step: "01",
     title: "Initial Consultation",
-    description: "We begin by understanding your goals, whether you are looking to maximize rental yield, sell, or find your dream home. We listen before we advise.",
+    description: "We begin by understanding your property preferences, goals, and investment objectives to identify the right opportunities. ",
     image: "/process/1.jpg",
   },
   {
     step: "02",
     title: "Property Evaluation",
-    description: "Our experts conduct a comprehensive market analysis and property appraisal to determine the optimal strategy for your asset in the current climate.",
+    description: "Our team reviews your property's location, condition and market position to provide an informed assessment. ",
     image: "/process/2.webp",
   },
   {
     step: "03",
     title: "Strategy & Marketing",
-    description: "We craft a tailored plan. For sellers, this means premium photography, cinematic videography, and targeted campaigns to attract the right audience.",
+    description: "Our approach focuses on presenting your property effectively and attracting relevant enquiries.",
     image: "/process/3.jpg",
   },
   {
     step: "04",
     title: "Client & Tenant Matching",
-    description: "We leverage our extensive network to connect you with qualified buyers or high-quality, pre-vetted tenants who align with your requirements.",
+    description: "We help connect property owners with suitable prospective tenants and buyers through targeted enquiries and careful screening. ",
     image: "/process/4.webp",
   },
   {
     step: "05",
     title: "Legal & Compliance",
-    description: "Our team handles all the meticulous paperwork, including Ejari registration, tenancy contracts, and full RERA compliance, ensuring absolute peace of mind.",
+    description: "Property transactions and rental arrangements require accurate documentation and attention to applicable regulations. We assist with tenancy agreements, Ejari registration and relevant property management documentation",
     image: "/process/5.avif",
   },
   {
     step: "06",
     title: "Ongoing Management",
-    description: "For property management clients, we take over all daily operations. From rent collection to 24/7 maintenance, your asset is in safe hands.",
+    description: "Our ongoing property management services cover essential day-to-day responsibilities, including rent collection coordination, tenant communication, property inspections and maintenance arrangements. ",
     image: "/process/1.jpg",
   },
 ];
@@ -100,14 +100,14 @@ export default function ProcessSection() {
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-200 pb-8">
           <div>
             <span className="font-[family-name:var(--font-inter)] text-[11px] font-bold tracking-[0.25em] uppercase text-[#96683f] mb-3 block">
-              The Methodology
+              Our Property Management Process
             </span>
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-[#111827] leading-[1.1] tracking-tight">
-              Our Process
+             How Our Dubai Property Management Process Works
             </h2>
           </div>
           <p className="font-[family-name:var(--font-inter)] text-gray-500 text-[15px] max-w-md leading-relaxed">
-            A seamless, transparent journey from our first conversation to the final handover. We guide you every step of the way.
+            Whether you are a local landlord or an overseas property owner, we keep you informed and provide dedicated support throughout your property management journey.
           </p>
         </div>
 

@@ -74,15 +74,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         {/* TOP SECTION: Newsletter & Brand */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 pb-12 border-b border-white/10">
-          <div className="max-w-md">
+          <div className="max-w-xl">
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-medium tracking-tight leading-[1.2] mb-3">
               Stay <span className="italic text-[#96683f]">informed</span>
             </h2>
             <p
               className={`${inter.className} text-white/60 text-[15px] leading-[1.7]`}
             >
-              Subscribe for market insights, new listings, and property
-              management updates from our team.
+              Subscribe to receive the latest Dubai real estate market insights,
+              property listings, investment updates and expert tips on property
+              management in Dubai.
             </p>
           </div>
 
@@ -326,9 +327,25 @@ export default function Footer() {
                   </svg>
                 </a>
               </div>
-              <ul className={`${inter.className} space-y-2.5 text-[13px] text-white/50`}>
-                <li><Link href="/privacy-policy" className="hover:text-[#96683f] transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-[#96683f] transition-colors">Terms of Service</Link></li>
+              <ul
+                className={`${inter.className} space-y-2.5 text-[13px] text-white/50`}
+              >
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="hover:text-[#96683f] transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="hover:text-[#96683f] transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -338,8 +355,8 @@ export default function Footer() {
         <div
           className={`${inter.className} pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-[12px] text-white/40`}
         >
-          <p>© {currentYear} Dubai Homes. All rights reserved.</p>
-          <p>Dubai, United Arab Emirates</p>
+          <p>© {currentYear} Dubai Property Management. All Rights Reserved.</p>
+          <p>Professional Property Management Services in Dubai, United Arab Emirates</p>
         </div>
       </div>
     </footer>
