@@ -68,7 +68,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className={`${playfair.variable} ${inter.variable} py-12 bg-white overflow-hidden relative`}>
+    <section className={`${playfair.variable} ${inter.variable} py-12 bg-[#fcf9f6] overflow-hidden relative`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header — centered */}
         <div className="flex flex-col items-center text-center mb-12">
@@ -94,7 +94,7 @@ export default function FAQSection() {
                 key={index}
                 className={`border rounded-xl transition-colors duration-300 overflow-hidden ${
                   isOpen
-                    ? "border-[#e5d9cc] bg-[#faf7f3]"
+                    ? "border-[#e5d9cc] bg-white"
                     : "border-[#e5e7eb] bg-white hover:border-[#d6c4b0]"
                 }`}
               >

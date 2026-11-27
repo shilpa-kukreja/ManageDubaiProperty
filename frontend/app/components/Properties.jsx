@@ -20,6 +20,7 @@ const inter = Inter({
 const PROPERTIES = [
   {
     id: 1,
+    slug: "the-marina-penthouse",
     title: "The Marina Penthouse",
     location: "Dubai Marina",
     price: "AED 12,500,000",
@@ -31,6 +32,7 @@ const PROPERTIES = [
   },
   {
     id: 2,
+    slug: "palm-jumeirah-villa",
     title: "Palm Jumeirah Villa",
     location: "Palm Jumeirah",
     price: "AED 28,000,000",
@@ -42,6 +44,7 @@ const PROPERTIES = [
   },
   {
     id: 3,
+     slug: "downtown-skyline-loft",
     title: "Downtown Skyline Loft",
     location: "Downtown Dubai",
     price: "AED 4,800,000",
@@ -110,7 +113,7 @@ export default function FeaturedListingsSection() {
     <section
       id="properties"
       ref={sectionRef}
-      className={`${playfair.variable} ${inter.variable} relative w-full bg-white py-24 md:py-32 overflow-hidden`}
+      className={`${playfair.variable} ${inter.variable} relative w-full bg-white py-24 md:py-15 overflow-hidden`}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
         
@@ -128,20 +131,20 @@ export default function FeaturedListingsSection() {
             </h2>
           </div>
           
-          <Link 
+          {/* <Link 
             href="/properties"
             className={`${inter.className} group flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-[#111827] hover:text-[#96683f] transition-colors pb-2`}
           >
             View All Listings
             <div className="w-8 h-[1px] bg-[#111827] group-hover:bg-[#96683f] group-hover:w-12 transition-all duration-300" />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Property Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROPERTIES.map((property, index) => (
             <Link 
-              href={`/properties/${property.id}`} 
+              href={`/properties/${property.slug}`} 
               key={property.id}
               className={`group flex flex-col bg-white transition-all duration-700 ease-out ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
