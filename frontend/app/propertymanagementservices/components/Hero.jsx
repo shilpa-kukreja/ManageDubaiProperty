@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Playfair_Display, Inter } from "next/font/google";
+import { useState, useEffect } from "react"; // 👈 1. Import useState and useEffect
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"], 
@@ -15,6 +16,12 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
   variable: "--font-inter"
 });
+
+// 👈 2. Add your array of background images here
+const HERO_IMAGES = [
+  "/hero/01.png",
+  // "/hero/hero.webp",
+];
 
 const CONTACT_LINKS = [
   {
@@ -36,16 +43,6 @@ const CONTACT_LINKS = [
       </svg>
     ),
   },
-  // {
-  //   label: "info@binayah.com",
-  //   href: "mailto:info@binayah.com",
-  //   icon: (
-  //     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-  //       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-  //       <polyline points="22,6 12,13 2,6" />
-  //     </svg>
-  //   ),
-  // },
 ];
 
 const STATS = [
@@ -56,21 +53,42 @@ const STATS = [
 ];
 
 export default function ServiceHero() {
+  // 👈 3. State to track the current image index
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // 👈 4. useEffect to handle the auto-scroll timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000); // Changes every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className={`${playfair.variable} ${inter.variable} relative w-full pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden`}>
       
-      {/* Background Image & Overlays */}
+      {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero/01.png" // Replace with your preferred Dubai skyline image
-          alt="Dubai Property"
-          fill
-          priority
-          className="object-cover object-center "
-        />
-        {/* Dark gradient overlay to blend with your theme */}
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#151310] via-[#151310]/90 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#151310] via-transparent to-transparent" /> */}
+        {HERO_IMAGES.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImage ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={src}
+              alt={`Dubai Property ${index + 1}`}
+              fill
+              priority={index === 0}
+              className="object-cover object-center"
+            />
+          </div>
+        ))}
+        
+        {/* Dark gradient overlay to ensure text readability across all images */}
+        {/* <div className="absolute inset-0 bg-black/40" /> */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -94,7 +112,7 @@ export default function ServiceHero() {
 
         {/* Main Heading */}
         <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[4rem] font-medium text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
-          No Matter Where You Are, <span className="italic text-[#96683f]">Your Property Is In Safe Hands</span>
+          No Matter Where You Are, <span className="italic text-white">Your Property Is In Safe Hands</span>
         </h1>
 
         {/* Subtext */}

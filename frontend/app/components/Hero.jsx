@@ -128,7 +128,7 @@ export default function Hero() {
             {/* Main Heading using Playfair Display */}
             <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[4rem] font-medium text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
               Your Property,{" "} <br/>
-              <span className="italic text-[#96683f]">
+              <span className="italic text-white">
                  Our Responsibility
               </span>
             </h1>
