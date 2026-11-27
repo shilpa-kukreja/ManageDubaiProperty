@@ -19,8 +19,8 @@ const playfair = Playfair_Display({
 });
 
 const HERO_IMAGES = [
+  "/hero/01.png",
   "/hero/hero.webp",
-  // "/hero/hero-2.jpg",
   // "/hero/hero-3.jpg",
 ];
 
@@ -110,25 +110,26 @@ export default function Hero() {
       </div>
 
       {/* GRADIENT OVERLAYS */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 z-0" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 z-0" /> */}
 
       {/* ================= MIDDLE CONTENT ================= */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-40 pb-20">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
           {/* Left Side: Heading + Subtext */}
           <div className="max-w-4xl">
-
-             <div className="flex items-center gap-3 mb-6">
-          <span className="w-8 h-[1px] bg-[#96683f]" />
-          <span className={`${inter.className} text-[#96683f] text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em]`}>
-            Property Management &middot; Dubai
-          </span>
-        </div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-[1px] bg-[#96683f]" />
+              <span
+                className={`${inter.className} text-[#96683f] text-[11px] md:text-[12px] font-bold uppercase tracking-[0.25em]`}
+              >
+                Professional Property Management Services in &middot; Dubai
+              </span>
+            </div>
             {/* Main Heading using Playfair Display */}
             <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[4rem] font-medium text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
-              No Matter Where You Are,{" "}
+              Professional Property Management in Dubai,{" "}
               <span className="italic text-[#96683f]">
-                Your Property Is In Safe Hands
+                Your Property, Our Responsibility
               </span>
             </h1>
 
@@ -136,10 +137,11 @@ export default function Hero() {
             <p
               className={`${inter.className} text-white/70 text-[15px] md:text-lg leading-relaxed max-w-2xl mb-10`}
             >
-              Let the professionals manage it. We handle tenants, rent
-              collection, snagging, maintenance and reporting so your Dubai
-              property stays occupied, compliant and profitable, whether you
-              live here or overseas.
+              Own a property in Dubai but don't have the time to manage it
+              yourself? Our professional Dubai property management services make
+              property ownership simple, convenient and stress-free. From tenant
+              screening and rent collection to property maintenance, snagging
+              inspections and financial reporting, we take care of every detail.
             </p>
 
             {/* Contact Buttons Row */}
@@ -173,12 +175,12 @@ export default function Hero() {
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
           <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
-            Managing Dubai property
+           Dubai Property Management
           </span>
           <div
             className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
           >
-            <span>Since 2007</span>
+            <span>19+ Years of Experience</span>
           </div>
         </div>
 
@@ -186,7 +188,7 @@ export default function Hero() {
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
           <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
-            Fully compliant
+            Fully Compliant Property Management
           </span>
           <div
             className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
@@ -205,7 +207,7 @@ export default function Hero() {
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                 />
               </svg>
-              <span>RERA 1162</span>
+              <span>RERA Registered – 1162</span>
             </div>
           </div>
         </div>
@@ -214,12 +216,12 @@ export default function Hero() {
         <div className="flex-1 flex flex-col justify-center px-8 border-r border-white/10 cursor-pointer group hover:bg-[#b07e50]/10 transition-colors">
           {/* Changed to Playfair Display */}
           <span className="font-[family-name:var(--font-playfair)] text-[13px] tracking-wide text-[#e1c8b4] mb-1 font-medium">
-            Licensed maintenance
+            Professional Maintenance Support
           </span>
           <div
             className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
           >
-            <span>24/7</span>
+            <span>24/7 Tenant Support</span>
           </div>
         </div>
 
@@ -232,18 +234,18 @@ export default function Hero() {
           <div
             className={`flex justify-between items-center text-white text-[16px] font-medium ${inter.className}`}
           >
-            <span>4.5★</span>
+            <span>4.5-Star Rating</span>
           </div>
         </div>
 
         {/* Action Button */}
         <div className="w-[200px]">
-          <Link 
-           href="/contact"
-            className={`${inter.className} w-full h-full bg-[#b07e50] text-white text-[13px] font-semibold hover:bg-[#96683f] transition-colors duration-300`}
+          <button
+            href="/contact"
+            className={`${inter.className} w-full h-full bg-[#b07e50] text-white text-[16px] font-semibold hover:bg-[#96683f] transition-colors duration-300`}
           >
             Get Started
-          </Link>
+          </button>
         </div>
       </div>
     </section>

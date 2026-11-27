@@ -53,7 +53,7 @@ export default function ParallaxImageSection() {
       <div className="absolute inset-0 w-full h-full">
         <div
           className="w-full h-full bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/image/hero.webp')" }}
+          style={{ backgroundImage: "url('/image/image banner.png')" }}
         >
           {/* Deepened the overlay slightly to make the white text pop more */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />

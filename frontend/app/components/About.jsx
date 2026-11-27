@@ -38,7 +38,7 @@ export default function AboutSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(sectionElement);
@@ -48,13 +48,12 @@ export default function AboutSection() {
 
   return (
     <section
-    id="about"
+      id="about"
       ref={sectionRef}
-      className={`${plusJakarta.variable} ${inter.variable} ${playfair.variable} relative w-full bg-[#fcf9f6] py-20 md:py-28 overflow-hidden`}
+      className={`${plusJakarta.variable} ${inter.variable} ${playfair.variable} relative w-full bg-[#fcf9f6] py-20 md:py-20 overflow-hidden`}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
           {/* ---------- LEFT: CONTENT ---------- */}
           <div
             className={`transition-all duration-1000 ease-out transform ${
@@ -72,20 +71,29 @@ export default function AboutSection() {
 
             {/* Heading - Using Playfair Display for that premium serif look */}
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-black leading-[1.1] tracking-tight mb-8">
-              LOCAL <span className="text-[#96683f]">KNOWLEDGE.</span> <br />
-              GLOBAL <span className="text-[#96683f]">PERSPECTIVE.</span>
+              YOUR<span className="text-[#96683f]"> TRUSTED</span> <br />
+              REAL ESTATE{" "}
+              <span className="text-[#96683f]">PARTNER IN DUBAI</span>
             </h2>
 
             {/* Paragraphs */}
             <div className="font-[family-name:var(--font-inter)] text-gray-500 text-sm md:text-base leading-relaxed space-y-4 mb-10">
               <p>
-                Key Shore Real Estate is a Dubai-based brokerage built on trust, expertise, and a commitment to our clients.
+                We provide tailored real estate solutions for individuals,
+                investors, and families looking to buy, invest, or relocate in
+                Dubai.{" "}
               </p>
               <p>
-                We provide tailored real estate solutions for individuals, investors, and families looking to buy, invest, or relocate in Dubai.
+                Whether you are looking to buy a home, explore property
+                investment opportunities, sell your property or relocate to
+                Dubai, our team is committed to making your real estate journey
+                straightforward and rewarding.
               </p>
               <p>
-                Our focus is simple — understand your goals, guide you with clarity and help you make confident real estate decisions.
+               That is why we focus
+                on understanding your individual goals, identifying suitable
+                opportunities and providing clear guidance throughout every
+                stage of the process.
               </p>
             </div>
           </div>
@@ -103,13 +111,12 @@ export default function AboutSection() {
               Using aspect-video for a perfect 16:9 landscape ratio
             */}
             <div className="relative w-full aspect-video md:aspect-[16/10] overflow-hidden">
-              
               {/* The actual image */}
               <Image
-                src="/about/about-retina.webp" // 👈 Replace with your Dubai landscape image
+                src="/about/about.png" // 👈 Replace with your Dubai landscape image
                 alt="Dubai Skyline with Museum of the Future"
                 fill
-                className="object-cover object-center scale-105 hover:scale-100 transition-transform duration-700"
+                className="object-cover "
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
 
@@ -119,13 +126,11 @@ export default function AboutSection() {
 
             {/* Premium Gold Frame Border (Offset) */}
             <div className="absolute -inset-2 md:-inset-3 border border-[#d4af37]/50 pointer-events-none" />
-            
+
             {/* Small Gold Accent Detail (top-right corner style) */}
             <div className="absolute -top-4 -right-4 w-12 h-12 border-t-2 border-r-2 border-[#d4af37]" />
             <div className="absolute -bottom-4 -left-4 w-12 h-12 border-b-2 border-l-2 border-[#d4af37]" />
-
           </div>
-
         </div>
       </div>
     </section>

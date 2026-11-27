@@ -18,9 +18,9 @@ import FloatingContact from "./components/FloatingContact";
 
 
 export const metadata = {
-  title: "DubaiHomes — Premium Property Management in Dubai",
+  title: "Property Management Dubai | Professional Property Services",
   description:
-    "End-to-end property management in Dubai. Tenant screening, rent collection, maintenance, and legal compliance — handled by RERA-licensed experts.",
+    "Looking for property management in Dubai? Get expert tenant management, rent collection, maintenance and reporting for your Dubai property.",
 };
 
 export default function RootLayout({ children }) {
