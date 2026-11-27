@@ -33,7 +33,7 @@ export default function OurStory() {
                 className="object-cover"
               />
               {/* Subtle dark gradient at the bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" /> */}
             </div>
           </div>
 

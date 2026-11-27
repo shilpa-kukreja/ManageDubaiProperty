@@ -74,15 +74,15 @@ export default function ContactPage() {
       <Navbar />
       <main className={`${playfair.variable} ${inter.variable} min-h-screen bg-[#faf7f3] mt-17`}>
         {/* ================= 1. FULL-WIDTH BANNER ================= */}
-        <section className="relative w-full h-[17vh] md:h-[40vh] bg-[#151310]">
+        <section className="relative w-full h-[17vh] md:h-[40vh] ">
           <Image
             src="/contact/contact us.png"
             alt="Contact Dubai Homes"
             fill
-            className="object-cover opacity-80"
+            className="object-cover "
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111827]/50 to-transparent" />
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-[#111827]/50 to-transparent" /> */}
         </section>
 
         {/* ================= 2. FORM & CONTACT DETAILS ================= */}
