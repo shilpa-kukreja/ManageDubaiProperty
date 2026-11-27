@@ -54,7 +54,7 @@ export default function DeveloperSnagging() {
 
   return (
     <>
-      <section className={`${playfair.variable} ${inter.variable} py-8 md:py-12 bg-white relative overflow-hidden`}>
+      <section  className={`${playfair.variable} ${inter.variable} py-8 md:py-12 bg-white relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           
           {/* ================= CENTERED HEADER ================= */}

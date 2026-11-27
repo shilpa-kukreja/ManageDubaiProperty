@@ -127,7 +127,7 @@ export default function WhatsIncluded() {
 
   return (
     <>
-      <section id="whats-included" className={`${playfair.variable} ${inter.variable} py-8 md:py-12 bg-[#fcfbf9]`}>
+      <section id="services" className={`${playfair.variable} ${inter.variable} py-8 md:py-12 bg-[#fcfbf9]`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           {/* ================= CENTERED HEADER ================= */}

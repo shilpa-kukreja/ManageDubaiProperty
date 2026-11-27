@@ -57,16 +57,16 @@ const STATS = [
 
 export default function ServiceHero() {
   return (
-    <section className={`${playfair.variable} ${inter.variable} relative w-full pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-[#151310]`}>
+    <section className={`${playfair.variable} ${inter.variable} relative w-full pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden`}>
       
       {/* Background Image & Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero/hero.webp" // Replace with your preferred Dubai skyline image
+          src="/hero/01.png" // Replace with your preferred Dubai skyline image
           alt="Dubai Property"
           fill
           priority
-          className="object-cover object-center opacity-40"
+          className="object-cover object-center "
         />
         {/* Dark gradient overlay to blend with your theme */}
         {/* <div className="absolute inset-0 bg-gradient-to-r from-[#151310] via-[#151310]/90 to-transparent" />
